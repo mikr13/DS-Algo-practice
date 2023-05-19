@@ -198,6 +198,22 @@ export class BinaryTree {
 
     }
 
+    #isSame(leftroot, rightroot) {
+        if ((!leftroot && rightroot) || (leftroot && !rightroot) || (leftroot && rightroot && leftroot.val !== rightroot.val))
+            return false;
+
+        if (leftroot && rightroot)
+            return this.#isSame(leftroot.left, rightroot.right) && this.#isSame(leftroot.right, rightroot.left);
+        return true;
+    };
+
+    isSymmetric(root) {
+        if (!root)
+            return true;
+
+        return this.#isSame(root.left, root.right);
+    }
+
 }
 
 const bTree = new BinaryTree();
