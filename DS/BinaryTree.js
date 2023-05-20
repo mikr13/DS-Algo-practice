@@ -214,6 +214,13 @@ export class BinaryTree {
         return this.#isSame(root.left, root.right);
     }
 
+    maxDepth(root) {
+        if (!root)
+            return 0;
+
+        return 1 + Math.max(this.maxDepth(root.left), this.maxDepth(root.right));
+    }
+
 }
 
 const bTree = new BinaryTree();

@@ -53,16 +53,33 @@ export class LinkedList {
         }
 
     }
+
+    reverse() {
+        let temp = this.head;
+        let prev = null;
+        let next = null;
+
+        while (temp != null) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+
+        this.head = prev;
+    }
 }
 
-// const linkedList = new LinkedList();
-// linkedList.addNode(10)
-// linkedList.addNode(12)
-// linkedList.addNode(14)
-// linkedList.addNode(18)
-// linkedList.addNode(2)
-// linkedList.display()
+const linkedList = new LinkedList();
+linkedList.addNode(10)
+linkedList.addNode(12)
+linkedList.addNode(14)
+linkedList.addNode(18)
+linkedList.addNode(2)
+linkedList.display()
 // linkedList.removeData(12)
 // linkedList.display()
 // linkedList.removeData(2)
+// linkedList.display()
+// linkedList.reverse()
 // linkedList.display()
