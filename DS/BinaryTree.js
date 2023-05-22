@@ -198,12 +198,12 @@ export class BinaryTree {
 
     }
 
-    #isSame(leftroot, rightroot) {
-        if ((!leftroot && rightroot) || (leftroot && !rightroot) || (leftroot && rightroot && leftroot.val !== rightroot.val))
+    #isSame(leftRoot, rightRoot) {
+        if ((!leftRoot && rightRoot) || (leftRoot && !rightRoot) || (leftRoot && rightRoot && leftRoot.val !== rightRoot.val))
             return false;
 
-        if (leftroot && rightroot)
-            return this.#isSame(leftroot.left, rightroot.right) && this.#isSame(leftroot.right, rightroot.left);
+        if (leftRoot && rightRoot)
+            return this.#isSame(leftRoot.left, rightRoot.right) && this.#isSame(leftRoot.right, rightRoot.left);
         return true;
     };
 
