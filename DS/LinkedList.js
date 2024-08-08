@@ -138,6 +138,58 @@ export class LinkedList {
         this.head = prev;
     }
 
+    length() {
+        let temp = this.head;
+        let count = 0;
+
+        while (temp !== null) {
+            count++;
+            temp = temp.next;
+        }
+
+        console.log(count);
+    }
+
+    /**
+     * 
+     * @param {number} position indexed from 1
+     */
+    getAtPosition(position) {
+        let temp = this.head;
+        let k = 1;
+
+        while (k < position && temp !== null) {
+            k++;
+            temp = temp.next;
+        }
+
+        if (temp !== null) {
+            console.log(temp.data);
+        } else {
+            console.log('Position not found');
+        }
+    }
+
+    /**
+     * 
+     * @param {number} position indexed from 1
+     */
+    getFromEnd(position) {
+        let temp = this.head;
+        let prev = this.head;
+
+        for (let i = 0; i < position; i++) {
+            temp = temp.next;
+        }
+
+        while (temp !== null) {
+            temp = temp.next;
+            prev = prev.next;
+        }
+
+        console.log(prev.data);
+    }
+
 }
 
 const linkedList = new LinkedList();
@@ -159,7 +211,9 @@ linkedList.display()
 // linkedList.display()
 // linkedList.removeAtTheEnd()
 // linkedList.display()
-linkedList.removeAtAPosition(3)
-linkedList.display()
+// linkedList.removeAtAPosition(3)
+// linkedList.display()
 // linkedList.reverse()
 // linkedList.display()
+linkedList.getAtPosition(2)
+linkedList.getFromEnd(2)
