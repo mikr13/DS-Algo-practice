@@ -3,6 +3,10 @@ export class Stack {
         this.data = []
     }
 
+    isEmpty() {
+        return this.data.length === 0;
+    }
+
     push(data) {
         this.data[this.data.length] = data;
     }
